@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.auto.service:auto-service:1.0-rc4'
+    implementation 'com.squareup:javapoet:1.10.0'
+    implementation 'org.javassist:javassist:3.22.0-GA'
+    implementation project(':easyannotations-annotations')
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
